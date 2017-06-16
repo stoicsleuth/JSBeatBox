@@ -4,10 +4,7 @@
   <title> BeatBox </title>
   <link rel="stylesheet" href="new.css" type="text/css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script
-  src="https://code.jquery.com/jquery-3.2.1.min.js"
-  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-  crossorigin="anonymous"></script>
+
   <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 </head>
 
@@ -15,9 +12,12 @@
   <div class="drum">
     <p> The JavaScript Music Kit. </p>
   </div>
+
   <div class="drum2">
-    <p> Open Keyboard <input type="text"/></p>
+    <p> Hey there, you need a device with physical keyboard (hint: Laptop/PC) to properly view this site! </p>
   </div>
+
+
 
   <section class="wrapper">
     <div data-key="65" class="keys">
@@ -69,6 +69,9 @@
 
 </section>
 
+<footer>
+<a href="tarashankar.me">Go to my homepage </a>
+</footer>
 <script>
   window.addEventListener('keydown', function(e){
     const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
