@@ -1,0 +1,93 @@
+<DOCTYPE html>
+<html>
+<head>
+  <title> BeatBox </title>
+  <link rel="stylesheet" href="new.css" type="text/css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+</head>
+
+<body>
+  <div class="drum">
+    <p> The JavaScript Music Kit. </p>
+  </div>
+  <div class="drum">
+    <p> Open Keyboard <input type="text"/></p>
+  </div>
+
+  <section class="wrapper">
+    <div data-key="65" class="keys">
+      <kbd> A </kbd>
+      <span class="sound"> Sa </span>
+    </div>
+    <div data-key="83" class="keys">
+      <kbd> S </kbd>
+      <span class="sound"> Re </span>
+    </div>
+    <div data-key="68" class="keys">
+      <kbd> D </kbd>
+      <span class="sound"> Ga </span>
+    </div>
+    <div data-key="70" class="keys">
+      <kbd> F </kbd>
+      <span class="sound"> Ma </span>
+    </div>
+    <div data-key="71" class="keys">
+      <kbd> G </kbd>
+      <span class="sound"> Pa </span>
+    </div>
+    <div data-key="72" class="keys">
+      <kbd> H </kbd>
+      <span class="sound"> Dha </span>
+    </div>
+    <div data-key="74" class="keys">
+      <kbd> J </kbd>
+      <span class="sound"> Ni </span>
+    </div>
+    <div data-key="75" class="keys">
+      <kbd> K </kbd>
+      <span class="sound"> Sa </span>
+    </div>
+    <div data-key="76" class="keys">
+      <kbd> L </kbd>
+      <span class="sound"> Saa </span>
+    </div>
+
+    <audio data-key="65" src="sounds/1.wav"></audio>
+    <audio data-key="83" src="sounds/2.wav"></audio>
+    <audio data-key="68" src="sounds/3.wav"></audio>
+    <audio data-key="70" src="sounds/4.wav"></audio>
+    <audio data-key="71" src="sounds/5.wav"></audio>
+    <audio data-key="72" src="sounds/6.wav"></audio>
+    <audio data-key="74" src="sounds/7.wav"></audio>
+    <audio data-key="75" src="sounds/8.wav"></audio>
+    <audio data-key="76" src="sounds/9.wav"></audio>
+
+</section>
+
+<script>
+  window.addEventListener('keydown', function(e){
+    const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+    const key = document.querySelector(`.keys[data-key="${e.keyCode}"]`);
+    if(!audio) return;
+    audio.currentTime = 0;
+    audio.play();
+    key.classList.add('playing');
+
+
+
+  });
+  function removeTransition(e){
+    //if(e.propertyName !== 'transform') return;
+    this.classList.remove('playing');
+  };
+
+  const keys= document.querySelectorAll('.keys');
+  keys.forEach(key => key.addEventListener('transitionend', removeTransition));
+</script>
+</body>
+</html>
