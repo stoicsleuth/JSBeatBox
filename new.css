@@ -62,6 +62,14 @@ kbd{
 footer{
   display: none;
 }
+.sad{
+  text-decoration: none;
+  color: white;
+}
+.drum3{
+  margin-top: 150px;
+}
+
 @media (max-width:900px) {
   .wrapper{
     display: none;
