@@ -1,0 +1,97 @@
+body{
+  background-color: crimson;
+  background-image: linear-gradient(142deg, #dc147f, #dc145d 31%, crimson 65%, #dc141b);
+
+}
+
+.wrapper{
+  margin-top: 15em;
+  text-align: center;
+}
+
+.keys{
+  text-align: center;
+height: 70px;
+width: 120px;
+border: 2px solid white;
+border-radius: 6px;
+display: inline-block;
+padding-bottom: 25px;
+padding-top: 20px;
+/* padding-right: 50px; */
+margin-right: 30px;
+transition: all 0.7s;
+margin-bottom: 35px;
+/* text-align: center; */
+
+}
+.playing{
+  transform: scale(1.1);
+  border-color: yellow;
+  box-shadow: 0 0 5px yellow;
+}
+.drum{
+  text-align: center;
+  margin-top: 100px;
+}
+.drum p{
+
+  font-size: 2.5em;
+  font-family: 'Open Sans';
+  font-weight: 800;
+  color: white;
+}
+.drum2 p{
+  display: none;
+}
+kbd{
+  color:white;
+  font-size: 2.2em;
+  display: block;
+  margin-bottom: 4px;
+  font-weight: 800;
+  font-family: sans-serif;
+}
+.sound{
+  color: white;
+ text-transform: uppercase;
+ font-size: 1.2em;
+ font-family: fantasy;
+ margin-top: 5px;
+}
+footer{
+  display: none;
+}
+.bye{
+  display: none;
+}
+
+@media (max-width:900px) {
+  .wrapper{
+    display: none;
+  }
+  .drum2 p{
+    text-align: center;
+    display: inline-block;
+    font-size: 1.6em;
+    font-family: 'Open Sans';
+    font-weight: 500;
+    color: white;
+  }
+  footer{
+    display: block;
+    position: absolute;
+    text-align: center;
+    bottom: 40;
+    width:100%;
+    text-decoration: none;
+
+  }
+  footer a{
+    font-size: 1.3em;
+    text-decoration: none;
+    font-family: 'Open Sans';
+    font-weight: 400;
+    color:white;
+  }
+}

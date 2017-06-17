@@ -1,0 +1,105 @@
+<DOCTYPE html>
+<html>
+<head>
+  <title> BeatBox </title>
+  <link rel="stylesheet" href="sad.css" type="text/css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+</head>
+
+<body>
+  <div class="drum">
+    <p> The Actual JavaScript Music Kit. </p>
+  </div>
+
+  <div class="drum2">
+    <p> Hey there, you need a device with physical keyboard (hint: Laptop/PC) to properly view this site! </p>
+  </div>
+
+
+
+  <section class="wrapper">
+    <div data-key="65" class="keys">
+      <kbd> A </kbd>
+      <span class="sound"> Clap </span>
+    </div>
+    <div data-key="83" class="keys">
+      <kbd> S </kbd>
+      <span class="sound"> Hithat </span>
+    </div>
+    <div data-key="68" class="keys">
+      <kbd> D </kbd>
+      <span class="sound"> Cliq </span>
+    </div>
+    <div data-key="70" class="keys">
+      <kbd> F </kbd>
+      <span class="sound"> Openhat </span>
+    </div>
+    <div data-key="71" class="keys">
+      <kbd> G </kbd>
+      <span class="sound"> Boom </span>
+    </div>
+    <div data-key="72" class="keys">
+      <kbd> H </kbd>
+      <span class="sound"> Ride </span>
+    </div>
+    <div data-key="74" class="keys">
+      <kbd> J </kbd>
+      <span class="sound"> Share </span>
+    </div>
+    <div data-key="75" class="keys">
+      <kbd> K </kbd>
+      <span class="sound"> Tom </span>
+    </div>
+    <div data-key="76" class="keys">
+      <kbd> L </kbd>
+      <span class="sound"> Tink </span>
+    </div>
+
+    <div class="bye" id="bye2">
+      <p> Dude, don't you have anything else to do? Something more productive?</p>
+    </div>
+
+
+    <audio data-key="65" src="sounds2/1.wav"></audio>
+    <audio data-key="83" src="sounds2/2.wav"></audio>
+    <audio data-key="68" src="sounds2/3.wav"></audio>
+    <audio data-key="70" src="sounds2/4.wav"></audio>
+    <audio data-key="71" src="sounds2/5.wav"></audio>
+    <audio data-key="72" src="sounds2/6.wav"></audio>
+    <audio data-key="74" src="sounds2/7.wav"></audio>
+    <audio data-key="75" src="sounds2/8.wav"></audio>
+    <audio data-key="76" src="sounds2/9.wav"></audio>
+
+</section>
+
+<footer>
+<a href="tarashankar.me">Go to my homepage </a>
+</footer>
+<script>
+  window.addEventListener('keydown', function(e){
+    const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+    const key = document.querySelector(`.keys[data-key="${e.keyCode}"]`);
+    if(!audio) return;
+    audio.currentTime = 0;
+    audio.play();
+    key.classList.add('playing');
+
+
+
+  });
+  function removeTransition(e){
+    //if(e.propertyName !== 'transform') return;
+    this.classList.remove('playing');
+  };
+  function bye(){
+    document.getElementById('bye2').classList.remove('bye');
+      document.getElementById('bye2').classList.add('drum');
+  };
+  setTimeout(bye, 12000);
+  const keys= document.querySelectorAll('.keys');
+  keys.forEach(key => key.addEventListener('transitionend', removeTransition));
+</script>
+</body>
+</html>
